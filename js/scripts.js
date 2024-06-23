@@ -1,4 +1,4 @@
-function subscribe() {
+/*function subscribe() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const number = document.getElementById("phone").value;
@@ -25,8 +25,41 @@ function subscribe() {
         })
       )
       .catch(console.log("Error"));
+    clear();
   }
+}*/
+function subscribe() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const number = document.getElementById("phone").value;
+  if (name == "" || email == "" || number == "") {
+    swal({
+      title: "Datos incompletos!",
+      text: "Por favor, llena todos los campos para poder registrarte.",
+      icon: "error",
+    });
+  } else {
+    var base_url = "https://api.whatsapp.com/send?phone=51970218907&text=";
+    var mensaje = "Hola soy " + name + " Mi correo es: " + email + " CEL: " + number + ", me gustaría unirme al grupo de WhatsApp.";
+    var url_final = base_url + encodeURIComponent(mensaje);
+    window.open(url_final, '_blank');
+    swal({
+      title: "En hora buena!",
+      text: "Gracias por registrar tus datos, pronto nos pondremos en contacto contigo.",
+      icon: "success",
+      button: "Aceptar",
+    });
+    clear();
+  }
+  
 }
+
+function clear() {
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("phone").value = "";
+}
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Navbar shrink function

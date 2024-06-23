@@ -39,10 +39,11 @@ function subscribe() {
       icon: "error",
     });
   } else {
-    var base_url = "https://api.whatsapp.com/send?phone=51970218907&text=";
-    var mensaje = "Hola soy " + name + " Mi correo es: " + email + " CEL: " + number + ", me gustaría unirme al grupo de WhatsApp.";
-    var url_final = base_url + encodeURIComponent(mensaje);
-    window.open(url_final, '_blank');
+    //var base_url = "https://api.whatsapp.com/send?phone=51970218907&text=";
+    var base_url = "https://chat.whatsapp.com/KPE2cUH38msBx4K2MaldgL";
+    //var mensaje = "Hola soy " + name + " Mi correo es: " + email + " CEL: " + number + ", me gustaría unirme al grupo de WhatsApp.";
+    //var url_final = base_url + encodeURIComponent(mensaje);
+    window.open(base_url, '_blank');
     swal({
       title: "En hora buena!",
       text: "Gracias por registrar tus datos, pronto nos pondremos en contacto contigo.",
